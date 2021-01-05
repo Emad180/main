@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cartesian-to-cylindrical-to-sphere.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="canonical" href="https://www.materialscomputing.pw/cartesian-to-cylindrical-to-sphere.html" />
+    <script src='js/math.js' type='text/javascript'></script>
+    <script type="text/javascript" src="echart/dist/echarts.js"></script>
+    <script type="text/javascript" src="echart/dist/echarts-gl.min.js"></script> 
+    <meta name="description" content="An online platform to convert between rectangular, cylindrical and spherical coordinate systems">
+    <meta name="keywords" content="coordinate systems, cartesian, rectangular, cylindrical, spherical">
+    <meta name="author" content="Emad Hasabeldaim Hadi Hasabeldaim">
+    <meta http-equiv="refresh" content="3600"/>
+    <title>Graph the Conversion between the rectangular, cylindrical and sphere coordinates</title>
+</head>
+
+<body>
+    <header> 
+        <nav class='navbar'>
+            <input type='checkbox' id='check'>
+            <label for='check' class='toggle-button'>   
+                <span class='bar'></span>
+                <span class='bar'></span>
+                <span class='bar'></span>
+            </label>
+
+            <label class="brand-title">MatCalc</label>
+
+            <img class='search' src="images/search-icon.png" alt="srearch icon"> 
+
+            <ul class='menu'>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="visualize-math-functions.html">2D math function f(x) Grapher </a></li>
+                <li><a href="3d-grapher.html">3D math function f(x, y) Grapher </a></li>
+                <li><a href="cartesian-to-cylindrical-to-sphere.html">Conversion between rectangle, cylindrical and spherical</a></li>
+                <li><a href="match-regardless-of-order.html">Jacascript/ Python matching function</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class='body-content'>
+        <div class='content'>
+            <h2>Conversion from rectangular to cylindrical or shperical coordinates. 
+            </h2>
+            <p>In this plat form you can convert between the rectancular to cylindrical to spherical coordinates, and vice versa. </br>
+                u represents the angle normal to the xy planes, and v is the angle normal to the yz planes. </br>
+                The value of u and v is &plusmn; &#120529;. </br>
+                To understand the rectangular, cylindrical, and the spherical coordinate systems click <a href="https://math.libretexts.org/Bookshelves/Calculus/Book%3A_Calculus_(OpenStax)/12%3A_Vectors_in_Space/12.7%3A_Cylindrical_and_Spherical_Coordinates#:~:text=To%20convert%20a%20point%20from,x%2C%20and%20z%3Dz." target="blank">here</a></br>
+                Use ^ to raise to any power. <br>
+                Use log(number/x, base) for logarithm, you can omit the base for log base 10. <br>
+                Use sqrt(x) for squre root.<br>
+                The rest of the mathmatical notations/symbols are the same as the general conventions.<br>
+
+            </p>
+            <p>xAxis  <input type="text" id='x' value='5*sin(v)*sin(u)'>
+            </p>
+
+            <p>yAxis  <input type="text" id='y' value='sin(v)*cos(u)'>
+            </p>
+
+            <p>zAxis  <input type="text" id='z' value='cos(v)'> <br>
+                <input type="submit" id='submit' value='Plot' onclick='plot()'>
+            </p>
+            
+            <div id="main">        </div>
+              
+        </div>
+    </div>
+
+    <div class='bottom-bar'>
+        
+        <div class='contact-us'>
+            Contact Us </br>
+            <a href = "mailto: omda180@gmail.com"><img src="images/gmail-logo.png" alt="gmail"></a>
+            <a href = "https://www.facebook.com/profile.php?id=100001888282568"><img src="images/facebook-logo.png" alt="facebook"></a>
+            <a href = "https://www.researchgate.net/profile/Emad_Hasabeldaim"><img src="images/research-gate-logo.png" alt="researchgate"></a>
+            <a href = "https://www.linkedin.com/in/emad-hasabeldaim-92b605125/"><img src="images/linkedin-logo.png" alt="linkedin"></a>
+        </div>
+    </div>
+    
+    <script>
+        window.onload = function(){
+            plot();
+        }
+
+        //Ploting function
+        function plot(){
+
+            let x = document.getElementById('x').value
+            let y = document.getElementById('y').value
+            let z = document.getElementById('z').value
+
+            //Processing the user input to javascript form
+            let Interprator = ['u', 'v', 'e', 'sin-1', 'cos-1', 'tan-1', 'sinh-1', 'cosh-1', 'tanh-1', 'cot-1', 'coth-1'];
+            let InterpratorOut = ['(u)', '(v)', '(e)', 'asin', 'acos', 'atan', 'asinh', 'acosh', 'atanh', 'acot', 'acoth']
+
+            function interprator(xyz){
+                let i = 0;
+                while(i < Interprator.length){
+                    if(xyz.match(Interprator[i])){
+                        let re = new RegExp(Interprator[i], 'g');
+                        var s = xyz.replace(re, InterpratorOut[i]);
+                        xyz = s;
+                    }
+                    i++     
+                }
+                return xyz;
+            }
+
+            let x1 = interprator(x);
+            let y1 = interprator(y);
+            let z1 = interprator(z);
+
+            var myChart = echarts.init(document.getElementById('main'));
+            option = {
+            tooltip: {},
+            visualMap: {
+                show: false,
+                dimension: 2,
+                min: -5,
+                max: 5,
+                inRange: {
+                    color: ['red', 'blue']
+                }
+            },
+            xAxis3D: {type: 'value'},
+            yAxis3D: {type: 'value'},
+            zAxis3D: {type: 'value'},
+            grid3D: {},
+            series: [{
+                type: 'surface',
+                parametric: true,
+                // shading: 'albedo',
+                parametricEquation: {
+                    u: {
+                        min: -Math.PI,
+                        max: Math.PI,
+                        step: Math.PI / 40
+                    },
+                    v: {
+                        min: 0,
+                        max: Math.PI,
+                        step: Math.PI / 40
+                    },
+                    x: function (u, v) {
+                        parsed = math.parse(x1);
+                        return parsed.evaluate({u, v});
+                    },
+                    y: function (u, v) {
+                        parsed = math.parse(y1);
+                        return parsed.evaluate({u, v});
+                    },
+                    z: function (u, v) {
+                        parsed = math.parse(z1);
+                        return parsed.evaluate({u, v});
+                    }
+                }
+            }]
+        };
+            myChart.setOption(option);
+        }onerror = function(error){
+            document.write('Refresh and try to insert a correct (u, v) formula');
+        }
+
+        //preventing inspection
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
+
+    
