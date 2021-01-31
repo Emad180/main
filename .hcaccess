@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^materialscomputing.pw [NC]
+
+RewriteRule ^(.*)$ http://materialscomputing.pw/$1 [L,R=301]
