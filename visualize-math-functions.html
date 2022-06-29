@@ -80,6 +80,11 @@
         window.onload = function(){
             plot();
         }
+        math.config({
+          number: 'BigNumber',      // Default type of number:
+                                    // 'number' (default), 'BigNumber', or 'Fraction'
+          precision: 10000             // Number of significant digits for BigNumbers
+        })
 
         //Ploting function
         function plot(){
