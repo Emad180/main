@@ -1,106 +1,43 @@
 body {
     width: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; padding: 0;
+    margin: 0; padding: 0; background-color: whitesmoke;
 }
-.navbar{
-    width: 100%; height: 50px; background-color: black; margin: 0;
-    position: fixed; top: 0; z-index: 1;
+
+.header{
+    background-color: black; display:flex;
 }
-#check{
-    display: none;
+
+.logo{
+    padding-top: 1vh; padding-bottom: 1vh;
 }
-.brand-title{
-    color: white; position: absolute; left: 80px; top: 2px;
-    font-size:xx-large; font-family: URW Chancery L, cursive; 
+
+p{
+    font-size: large; font-family: verana; margin-left: 2vw; margin-right: 2vw;
+    padding: 0vh; line-height: 6vh;
 }
-.search{
-    width: 40px; height: 35px; float: right;
-    margin-right: 20px; margin-top: 5px;
+.main{
+    display: flex; flex-direction: row;
 }
-.toggle-button {
-    position: absolute;
-    top: 12px;
-    margin-left: 2%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 35px;
-    height: 25px;
-    cursor: pointer;
+
+.science{
+    width: 25vw; height: 50vh; background-color: white; margin-left: 5vw;
 }
-.toggle-button .bar {
-    height: 4px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
+
+.blogs{
+    width: 25vw; height: 50vh; background-color: white; margin-left: 5vw;
 }
-.menu{
-    list-style: none; width: 28%; height: 100vh; border: solid 1px;
-    margin-top: 51px; background-color: rgb(70, 67, 67); margin-left: 0;
-    margin-right: 0; overflow-y: scroll; padding-left: 0; 
+
+.career{
+    width: 25vw; height: 50vh; background-color: white; margin-left: 5vw;
 }
-ul li {
-    list-style: none; border: 1px solid rgb(90, 87, 87); height: max-content; 
-    text-indent: -5px; padding-left: 5px;
-}
-ul li:hover{
-    background-color: green; 
-}
-ul li a {
-    text-decoration: none; line-height: 25px; color: whitesmoke; 
-    margin-left: 5px; 
-}
-#check:checked ~ .menu{
-    display: none;
-}
-.body-content{
-    margin-top: 30px; margin-left: 30%; padding: 0; text-align: justify;
-    width: 69%; display: block; 
-}
-.content{
-    padding: 5px; line-height: 25px; 
-}
-h2 {
-    text-shadow: 1px 2px;
-}
-.blocks {
-    display: block; border: 2px solid black; padding: 5px; border-radius: 5px;
-    background-color: greenyellow; box-shadow: 5px 10px rgb(58, 92, 8);
-}
-.bottom-bar{
-    display: flex; width:100%; height: 10em; background-color: black;
-    color:white; justify-content: center; flex-direction: row; float: right;
-    margin: 0; position: relative; z-index: 10; margin-top: 20px;
-}
-.contact-us{
-    color:white; width: 300px; margin: 10px;
-    padding: 10px; text-align: center;
-}
-.contact-us a img{
-    width: 40px; height: 40px; margin: 5px; margin-top: 10px;
-}
+
+p {color: white}
 
 
 @media (max-width: 768px){
-    .menu{
-        display: none; 
-    }
-    #check:checked ~ .menu {
-        display: block; width: 50%;
-    }
-    .body-content{
-        padding: 5px; text-align: justify;
-        width: 97%; display: block; margin-left: 0;
-    }
-    .bottom-bar{
-        width:100%; height: 10em; 
-        margin: 0; 
-    }
 
 }
 
 @media (max-width: 481px){
-    #check:checked ~ .menu {
-        display: block; width: 100%;
-    }
+
 }
