@@ -12,18 +12,17 @@ body {
 }
 
 p{
-    font-size: large; font-family: verana; margin-left: 2vw; margin-right: 2vw;
-    padding: 0vh; line-height: 6vh;
+    font-size: xx-large; font-family: fantasy; margin-left: 2vw; margin-right: 2vw;
+    padding: 0vh; 
+}
+a{
+    color:white;
 }
 .main{
     display: flex; flex-direction: row;
 }
 
 .science{
-    width: 25vw; height: 50vh; background-color: white; margin-left: 5vw;
-}
-
-.blogs{
     width: 25vw; height: 50vh; background-color: white; margin-left: 5vw;
 }
 
