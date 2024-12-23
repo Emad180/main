@@ -1,33 +1,42 @@
 body {
-    width: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%; font-family: 'Segoe UI', Verdana, sans-serif;
     margin: 0; padding: 0; background-color: whitesmoke;
 }
 
 .header{
-    background-color: black; display:flex;
+    background-color: black; display: flex; position: fixed; width: 100vw; height: 180px;
 }
 
 .logo{
-    padding-top: 1vh; padding-bottom: 1vh;
+    width: 170px; height: 170px; padding-top: 1vh; padding-bottom: 1vh;
 }
 
 p{
-    font-size: x-large; font-family: fantasy; margin-left: 2vw; margin-right: 2vw;
+    font-size: 25px; font-family: fantasy; margin-left: 2vw; margin-right: 2vw;
     padding: 0vh; 
 }
-a{
+.about { 
     color:white;
 }
+.contact{
+    color: white;
+}
+.linkedin{
+    width:40px; height: 40px; margin-left: 2vw; margin-top: 1vh;
+}
 .main{
-    display: flex; flex-direction: row;
+    display: flex; flex-direction: row; padding-top: 190px; font-family: Verdana, sans-serif;
+    font-size: 20px; line-height: 30px;;
 }
 
 .science{
-    width: 25vw; height: 50vh; background-color: white; margin-left: 5vw;
+    width: 35vw; min-height: 50vh; background-color: white; margin-left: 10vw; margin-top:1vh;
+    padding: 10px; 
 }
 
 .career{
-    width: 25vw; height: 50vh; background-color: white; margin-left: 5vw;
+    width: 35vw; min-height: 50vh; background-color: white; margin-left: 10vw; margin-top:1vh;
+    padding: 10px;
 }
 
 p {color: white}
