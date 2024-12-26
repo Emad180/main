@@ -81,7 +81,7 @@ ul input {
     display: none;
 }
 .body-content{
-   top: 71px; margin-left: 26%; padding: 0; text-align: justify; position: relative;
+   top: 71px; margin-left: 26%; padding: 10px; text-align: justify; position: relative;
     width: 65%; background-color: white; line-height: 2rem; font-family: Verdana, sans-serif;
     font-size: 20px; line-height: 30px; 
 }
@@ -90,26 +90,27 @@ h1{
     font-size: xx-large; text-align: center;
 }
 
+button{
+    padding: 5px; font-family: inherit; font-size: large; margin-left: 40%; margin-top: 10px;
+    margin-bottom: 20px;
+}
 
 .bottom-bar{
-    width:100%; height: 10rem; background-color: black; display: flex; flex-direction: row;
-    color: white; font-family: 'Arial Narrow', Arial, sans-serif;
+    width:100%; height: 50vh; background-color: whitesmoke; display: flex; flex-direction: row;
+    color: black; font-family: Verdana, sans-serif; font-size: 20px; line-height: 35px;
 }
 .section1{
-    width: 50%; padding: 2%; text-align: center; 
+    width: 50%; padding: 2%; 
 }
 .section2{
-    width: 50%; padding: 2%; text-align: center; 
+    width: 50%; padding: 2%; 
 }
-.section2 a{
-    text-decoration: none; color: white; border: 1px solid rgb(27, 27, 27); background-color: rgb(27, 27, 27);
-    padding: 1%; border-radius: 5px;
+.contact-bottom{
+    font-size: 25px; font-family: fantasy; margin-bottom: 0px;
 }
-.section2 a:hover{
-    background-color: rgb(53, 52, 52);
-}
-.contact_us_icon{
-    position: absolute; height: 2rem; margin-left: 1%;
+
+.linkedin-bottom{
+    width:40px; height: 20px; margin-left: 20px; 
 }
 
 @media (max-width: 1024px){
