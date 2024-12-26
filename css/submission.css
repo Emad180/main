@@ -63,8 +63,8 @@ html, body {
 
 
 ul li {
-    list-style: none; height: max-content; background-color: rgb(242, 247, 248); 
-    border-radius: 10px; margin-top: 3px; margin-left: 0; padding-left: 10px;
+    list-style: none; height: max-content; background-color: rgb(242, 247, 248); border-radius: 10px; margin-top: 3px;
+    margin-left: 0; padding-left: 10px;
 }
 ul li:hover{
     background-color: rgb(176, 179, 179); 
