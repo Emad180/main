@@ -91,7 +91,7 @@ h1{
 }
 
 input{
-    margin-left: 30%; width: 30%; height: 25px; margin-top: 10px; font-family: inherit;
+    margin-left: 25%; width: 50%; height: 25px; margin-top: 10px; font-family: inherit;
     font-size: large;
 }
 
@@ -157,5 +157,8 @@ button{
     } 
     .bottom-bar{
         flex-direction: column; height: max-content; align-items: center;
+    }
+    input{
+        width: 80%; margin-left: 10%;
     }
 }
