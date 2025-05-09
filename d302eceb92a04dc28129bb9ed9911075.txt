@@ -1,0 +1,19 @@
+POST /IndexNow HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Host: api.indexnow.org
+{
+  "host": "https://sci-sim.com",
+  "key": "d302eceb92a04dc28129bb9ed9911075",
+  "keyLocation": "https://sci-sim.com/d302eceb92a04dc28129bb9ed9911075.txt",
+  "urlList": [
+      "https://sci-sim.com/index.html",
+      "https://sci-sim.com/newsletter.html",
+      "https://sci-sim.com/about.html",
+      "https://sci-sim.com/visualize-math-functions.html",
+      "https://sci-sim.com/3d-grapher.html",
+      "https://sci-sim.com/cartesian-to-cylindrical-to-sphere.html",
+      "https://sci-sim.com/match-regardless-of-order.html",
+      "https://sci-sim.com/downloads/match-string.html",
+      "https://sci-sim.com/iframe/match-string.txt"
+      ]
+}
