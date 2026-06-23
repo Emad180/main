@@ -1,0 +1,373 @@
+/* ==========================================
+   SCI SIM SOLUTIONS - ACADEMIC SERVICES PAGE
+   ========================================== */
+
+.nav-subtitle {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===== ACADEMIC HERO CONTEXT ===== */
+.academic-hero {
+    text-align: center;
+    padding: 35px 20px 40px; /* Shifted Up: Dramatically reduced top & bottom padding */
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: 0 auto 25px; /* Shifted Up: Tightened spacing below hero text block */
+}
+
+.academic-hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.2;
+    margin: 0 auto 15px; /* Shifted Up: Reduced heading bottom margin */
+    max-width: 800px;
+}
+
+.hero-lead {
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 25px; /* Shifted Up: Reduced text margin */
+}
+
+/* ===== HORIZONTAL SINGLE-LINE JOURNAL SLIDER ===== */
+.journal-slider-wrapper {
+    position: relative;
+    max-width: 1050px;
+    margin: 30px auto 10px; /* Shifted Up: Compressed vertical layout margins */
+    overflow: hidden;
+}
+
+/* Left & Right masking fades indicating smooth scrolling space */
+.slider-fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    z-index: 2;
+    pointer-events: none;
+}
+.slider-fade.left {
+    left: 0;
+    background: linear-gradient(90deg, #f8fafc 0%, rgba(248, 250, 252, 0) 100%);
+}
+.slider-fade.right {
+    right: 0;
+    background: linear-gradient(270deg, #f8fafc 0%, rgba(248, 250, 252, 0) 100%);
+}
+
+.journal-logo-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 35px;
+    padding: 10px 25px; /* Shifted Up: Tightened padding wrapper */
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+    
+    /* Native Momentum Scrolling for iOS/Android/Trackpads */
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    
+    /* Hiding native layout scrollbars across modern browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge */
+}
+
+.journal-logo-row::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.journal-logo-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.journal-logo-item img {
+    height: 150px;
+    width: auto;
+    display: block;
+    mix-blend-mode: multiply;
+    opacity: 0.75;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.journal-logo-item img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.scholar-citation-note {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.scholar-citation-note a {
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.scholar-citation-note a:hover {
+    text-decoration: underline;
+}
+
+/* ===== UNGROUPED CONFIGURATION CARD GRID ===== */
+.services-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 50px 20px 60px; /* Shifted Up: Lowered section vertical paddings */
+}
+
+.content-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px; /* Shifted Up: Shrunk header bottom buffer margin */
+}
+
+.content-header h2 {
+    font-size: 28px;
+    margin-bottom: 0; /* Shifted Up: Cleared description gap */
+}
+
+.academic-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.academic-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    padding: 28px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.academic-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(10, 37, 64, 0.04);
+}
+
+.card-header-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.academic-card h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.price-tag {
+    background: #f1f5f9;
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.card-description {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+}
+
+.card-status-bar {
+    font-size: 13px;
+    font-weight: 600;
+    color: #16a34a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 14px;
+}
+
+.status-icon {
+    font-size: 14px;
+}
+
+/* ===== GRAPH & MICROGRAPH DATA GALLERY ===== */
+.gallery-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 50px 20px 60px; /* Shifted Up: Reduced layout padding blocks */
+    border-top: 1px solid var(--border);
+}
+
+.data-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+@media(max-width: 520px) {
+    .data-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.gallery-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+}
+
+.image-wrapper {
+    background: #f8fafc;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-text {
+    padding: 24px;
+}
+
+.gallery-text h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.gallery-text p {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+/* ===== CONTACT & WHATSAPP PLATFORM CARD ===== */
+.academic-contact-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 50px 20px 80px; /* Shifted Up: Tightened final block pad */
+    border-top: 1px solid var(--border);
+}
+
+.profile-contact-card {
+    text-align: center;
+    background: var(--card);
+    padding: 45px 35px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.card-eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.profile-contact-card h3 {
+    font-size: 26px;
+    margin: 0 0 4px 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.company-sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0 0 24px 0;
+}
+
+.contact-divider-line {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 0 auto 24px;
+    width: 75%;
+}
+
+.direct-details {
+    margin-bottom: 35px;
+}
+
+.direct-details p {
+    margin: 10px 0;
+    font-size: 15px;
+    color: var(--text);
+}
+
+.email-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.email-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.whatsapp-engagement-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #25d366; 
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+}
+
+.whatsapp-engagement-btn:hover {
+    background: #20ba5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(37, 211, 102, 0.35);
+}
+
+.whatsapp-vector-graphic {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
