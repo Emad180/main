@@ -159,3 +159,66 @@ footer {
     color: var(--muted);
     font-size: 14px;
 }
+
+/* ===== ADDED: PROBLEMS, STEPS, WHY ===== */
+.subhead {
+    font-size: 20px;
+    margin: 10px 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary);
+}
+
+#problems .services-grid {
+    margin-bottom: 50px;
+}
+
+.method {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    margin: 12px 0 0;
+}
+
+.why-list {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.why-list li {
+    margin-bottom: 12px;
+}
+
+.contact-box .cta-button {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+    .top-nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+
+    .links a {
+        margin: 0 10px;
+    }
+
+    .hero {
+        padding: 60px 20px 50px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 50px 20px;
+    }
+}
